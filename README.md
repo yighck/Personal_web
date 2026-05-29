@@ -1,4 +1,4 @@
-# Yi Personal Website
+# 易灿扬 Personal Website
 
 这是一个个人网站和简历页面，适合自动化专业本科生展示学习方向、课程项目、技能和联系方式。
 
@@ -15,4 +15,3 @@ GitHub Pages 推荐设置：
 
 - Branch: `main`
 - Folder: `/root`
-
