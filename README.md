@@ -1,6 +1,7 @@
 # 易灿扬 Personal Website
 
 这是我的个人网站和简历页面，展示学习方向、课程项目、技能和联系方式。
+直达链接：https://yighck.github.io/Personal_web/
 
 ## 页面
 
