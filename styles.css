@@ -678,6 +678,17 @@ h3 {
   }
 }
 
+/* ── Text split animation wrappers ── */
+.word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.word {
+  display: inline-block;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
