@@ -47,9 +47,11 @@ const setupGsap = () => {
     return;
   }
 
-  document.documentElement.classList.add("js-animate-ready");
   gsap.registerPlugin(ScrollTrigger);
   gsap.defaults({ duration: 0.8, ease: "power3.out" });
+  gsap.set("[data-animate], [data-card], [data-step], [data-hero-panel]", {
+    autoAlpha: 0
+  });
 
   const heroTimeline = gsap.timeline();
   heroTimeline

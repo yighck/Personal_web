@@ -569,13 +569,6 @@ h3 {
   transform: translate(-50%, 0);
 }
 
-.js-animate-ready [data-animate],
-.js-animate-ready [data-card],
-.js-animate-ready [data-step],
-.js-animate-ready [data-hero-panel] {
-  visibility: hidden;
-}
-
 @media (max-width: 920px) {
   .nav-toggle {
     display: block;
