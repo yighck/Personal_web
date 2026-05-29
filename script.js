@@ -48,6 +48,9 @@ const setupGsap = () => {
   }
 
   gsap.defaults({ duration: 0.8, ease: "power3.out" });
+  if (window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
 
   gsap
     .timeline()
@@ -86,6 +89,52 @@ const setupGsap = () => {
         delay: 0.4
       }
     );
+  });
+
+  if (!window.ScrollTrigger) {
+    return;
+  }
+
+  gsap.utils.toArray(".section, .contact-section").forEach((section) => {
+    gsap.from(section, {
+      y: 34,
+      duration: 0.75,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 84%",
+        once: true
+      }
+    });
+  });
+
+  ScrollTrigger.batch(".work-card, .award-item", {
+    start: "top 84%",
+    once: true,
+    onEnter: (items) => {
+      gsap.from(items, {
+        y: 36,
+        scale: 0.98,
+        duration: 0.72,
+        ease: "power3.out",
+        stagger: 0.1,
+        overwrite: "auto"
+      });
+    }
+  });
+
+  ScrollTrigger.batch(".process-list article", {
+    start: "top 88%",
+    once: true,
+    onEnter: (items) => {
+      gsap.from(items, {
+        x: -22,
+        duration: 0.65,
+        ease: "power3.out",
+        stagger: 0.08,
+        overwrite: "auto"
+      });
+    }
   });
 };
 
