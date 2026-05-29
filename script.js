@@ -47,18 +47,19 @@ const setupGsap = () => {
     return;
   }
 
-  gsap.defaults({ duration: 0.8, ease: "power3.out" });
+  gsap.defaults({ duration: 0.8, ease: "power3.out", overwrite: "auto" });
+
   if (window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
   }
 
   gsap
     .timeline()
-    .from("[data-hero] .eyebrow", { y: 18 })
-    .from("[data-hero] h1", { y: 34 }, "-=0.45")
-    .from("[data-hero] .hero-copy", { y: 24 }, "-=0.45")
-    .from("[data-hero] .button", { y: 18, stagger: 0.08 }, "-=0.42")
-    .from("[data-hero-panel]", { y: 28 }, "-=0.32");
+    .fromTo("[data-hero] .eyebrow", { y: 18 }, { y: 0 })
+    .fromTo("[data-hero] h1", { y: 34 }, { y: 0 }, "-=0.45")
+    .fromTo("[data-hero] .hero-copy", { y: 24 }, { y: 0 }, "-=0.45")
+    .fromTo("[data-hero] .button", { y: 18 }, { y: 0, stagger: 0.08 }, "-=0.42")
+    .fromTo("[data-hero-panel]", { y: 28 }, { y: 0 }, "-=0.32");
 
   gsap.to(".hero-media", {
     scale: 1.05,
@@ -68,16 +69,21 @@ const setupGsap = () => {
     yoyo: true
   });
 
-  gsap.from(".hero-overlay span", {
-    scaleX: 0,
-    duration: 1.1,
-    stagger: 0.12,
-    ease: "power2.out",
-    delay: 0.4
-  });
+  gsap.fromTo(
+    ".hero-overlay span",
+    { scaleX: 0 },
+    {
+      scaleX: 1,
+      duration: 1.1,
+      stagger: 0.12,
+      ease: "power2.out",
+      delay: 0.4
+    }
+  );
 
   gsap.utils.toArray("[data-count]").forEach((node) => {
     const target = Number(node.dataset.count);
+
     gsap.fromTo(
       node,
       { textContent: 0 },
@@ -95,31 +101,37 @@ const setupGsap = () => {
     return;
   }
 
-  gsap.utils.toArray(".section, .contact-section").forEach((section) => {
-    gsap.from(section, {
-      y: 34,
-      duration: 0.75,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: section,
-        start: "top 84%",
-        once: true
-      }
+  const revealOnScroll = (targets, fromVars, toVars = {}) => {
+    gsap.utils.toArray(targets).forEach((target) => {
+      gsap.fromTo(target, fromVars, {
+        ...toVars,
+        scrollTrigger: {
+          trigger: target,
+          start: "top 84%",
+          once: true,
+          invalidateOnRefresh: true
+        }
+      });
     });
-  });
+  };
+
+  revealOnScroll(".section, .contact-section", { y: 34 }, { y: 0, duration: 0.75 });
 
   ScrollTrigger.batch(".work-card, .award-item", {
     start: "top 84%",
     once: true,
     onEnter: (items) => {
-      gsap.from(items, {
-        y: 36,
-        scale: 0.98,
-        duration: 0.72,
-        ease: "power3.out",
-        stagger: 0.1,
-        overwrite: "auto"
-      });
+      gsap.fromTo(
+        items,
+        { y: 36, scale: 0.98 },
+        {
+          y: 0,
+          scale: 1,
+          duration: 0.72,
+          ease: "power3.out",
+          stagger: 0.1
+        }
+      );
     }
   });
 
@@ -127,15 +139,20 @@ const setupGsap = () => {
     start: "top 88%",
     once: true,
     onEnter: (items) => {
-      gsap.from(items, {
-        x: -22,
-        duration: 0.65,
-        ease: "power3.out",
-        stagger: 0.08,
-        overwrite: "auto"
-      });
+      gsap.fromTo(
+        items,
+        { x: -22 },
+        {
+          x: 0,
+          duration: 0.65,
+          ease: "power3.out",
+          stagger: 0.08
+        }
+      );
     }
   });
+
+  ScrollTrigger.refresh();
 };
 
 setupGsap();
