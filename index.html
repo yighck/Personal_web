@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yi | Student Portfolio</title>
+    <meta
+      name="description"
+      content="Yi 的自动化专业学生个人网站，展示学习方向、课程项目、作品和联系方式。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="回到首页">
+        <span class="brand-mark">Y</span>
+        <span>Yi</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" data-nav>
+        <a href="#work">作品</a>
+        <a href="#awards">奖项</a>
+        <a href="#profile">关于</a>
+        <a href="#process">方法</a>
+        <a href="resume.html">简历</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">大二学生 / 自动化专业</p>
+          <h1 id="hero-title">在控制、硬件和代码之间，把想法做成可运行的作品。</h1>
+          <p class="hero-copy">
+            我正在学习自动控制原理、单片机、传感器与程序设计，把课程实验、个人练习和工程兴趣整理成可以展示、可以迭代的项目。
+          </p>
+          <div class="hero-actions" aria-label="主要操作">
+            <a class="button primary" href="#work">查看作品</a>
+            <a class="button secondary" href="#contact">联系我</a>
+          </div>
+        </div>
+        <div class="hero-strip" aria-label="关键能力">
+          <span>Control Systems</span>
+          <span>Embedded Basics</span>
+          <span>Sensor Practice</span>
+          <span>Programming</span>
+        </div>
+      </section>
+
+      <section class="section intro" aria-labelledby="intro-title">
+        <div>
+          <p class="eyebrow">现在关注</p>
+          <h2 id="intro-title">从课堂到项目，持续积累自己的作品集。</h2>
+        </div>
+        <p>
+          这个站点先用“Yi”作为占位身份。你可以把它改成真实姓名、学校专业、学习方向、项目链接和邮箱；整体版式已经为自动化专业学生介绍、课程项目展示和实习申请留好了空间。
+        </p>
+      </section>
+
+      <section class="section work-section" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Work</p>
+          <h2 id="work-title">学习与项目</h2>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-card-top">
+              <span class="work-index">01</span>
+              <span class="work-tag">单片机</span>
+            </div>
+            <h3>智能小车控制实验</h3>
+            <p>围绕电机驱动、循迹传感器和基础控制逻辑搭建练习，记录从调试到稳定运行的过程。</p>
+            <a href="#contact" aria-label="了解智能小车控制实验">了解更多</a>
+          </article>
+          <article class="work-card featured">
+            <div class="work-card-top">
+              <span class="work-index">02</span>
+              <span class="work-tag">控制系统</span>
+            </div>
+            <h3>温度采集与显示系统</h3>
+            <p>尝试完成传感器数据读取、串口通信和可视化显示，把硬件采集结果转化为更直观的数据反馈。</p>
+            <a href="#contact" aria-label="了解温度采集与显示系统">了解更多</a>
+          </article>
+          <article class="work-card">
+            <div class="work-card-top">
+              <span class="work-index">03</span>
+              <span class="work-tag">编程实践</span>
+            </div>
+            <h3>课程数据分析练习</h3>
+            <p>用程序处理实验数据、绘制曲线并整理结论，训练工程问题中的数据意识和表达能力。</p>
+            <a href="#contact" aria-label="了解课程数据分析练习">了解更多</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section awards-section" id="awards" aria-labelledby="awards-title">
+        <div class="section-heading">
+          <p class="eyebrow">Awards & Experience</p>
+          <h2 id="awards-title">经历与奖项</h2>
+        </div>
+        <div class="awards-list">
+          <article class="award-item">
+            <div class="award-meta">
+              <span class="award-year">2026</span>
+              <span class="award-badge">省级三等奖</span>
+            </div>
+            <h3>全国大学生机械创新设计大赛</h3>
+            <p>参与机械创新设计项目的方案构思、结构设计与实物制作，完成从概念到样机的全流程实践。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section profile-section" id="profile" aria-labelledby="profile-title">
+        <div class="profile-copy">
+          <p class="eyebrow">Profile</p>
+          <h2 id="profile-title">一个正在打基础，也在把自动化知识落到实践里的人。</h2>
+          <p>
+            作为自动化专业大二学生，我正在通过课程实验、单片机练习和个人项目积累经验。相比只停留在原理里，我更喜欢先让系统跑起来，再通过测试和反馈慢慢调好。
+          </p>
+        </div>
+        <div class="stats" aria-label="个人数据">
+          <div>
+            <strong>2</strong>
+            <span>大学二年级在读</span>
+          </div>
+          <div>
+            <strong>3+</strong>
+            <span>控制、嵌入式与数据方向</span>
+          </div>
+          <div>
+            <strong>∞</strong>
+            <span>持续学习与迭代</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process-section" id="process" aria-labelledby="process-title">
+        <div class="section-heading">
+          <p class="eyebrow">How I Work</p>
+          <h2 id="process-title">学习方法</h2>
+        </div>
+        <div class="process-list">
+          <article>
+            <span>01</span>
+            <h3>拆清问题</h3>
+            <p>先理解任务目标、使用场景和完成标准，再开始设计页面或写代码。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>做出版本</h3>
+            <p>先完成能运行的基础版本，再补充交互、视觉细节和内容表达。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>复盘改进</h3>
+            <p>记录做项目时遇到的问题，把反馈转化成下一次能用上的经验。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">欢迎交流学习、项目和机会。</h2>
+          <p>如果你想了解我的自动化课程项目、一起做实验练习，或者有实习/合作机会，欢迎联系我。</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:hello@example.com">hello@example.com</a>
+          <a class="button secondary" href="resume.html">查看简历</a>
+          <button class="button secondary" type="button" data-copy="hello@example.com">复制邮箱</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Yi</span>
+      <a href="#top">回到顶部</a>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" data-toast>邮箱已复制</div>
+    <script src="script.js"></script>
+  </body>
+</html>
