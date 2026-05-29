@@ -60,7 +60,7 @@ const setupGsap = () => {
     .fromTo(
       "[data-hero-panel]",
       { autoAlpha: 0, y: 36 },
-      { autoAlpha: 1, y: 0, clearProps: "visibility" },
+      { autoAlpha: 1, y: 0 },
       "-=0.32"
     );
 
@@ -90,7 +90,6 @@ const setupGsap = () => {
       {
         autoAlpha: 1,
         y: 0,
-        clearProps: "visibility",
         scrollTrigger: {
           trigger: element,
           start: "top 82%",
@@ -111,8 +110,7 @@ const setupGsap = () => {
           autoAlpha: 1,
           y: 0,
           scale: 1,
-          stagger: 0.12,
-          clearProps: "visibility,transform"
+          stagger: 0.12
         }
       );
     }
@@ -128,8 +126,7 @@ const setupGsap = () => {
         {
           autoAlpha: 1,
           x: 0,
-          stagger: 0.1,
-          clearProps: "visibility,transform"
+          stagger: 0.1
         }
       );
     }
