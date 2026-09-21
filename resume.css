@@ -63,7 +63,7 @@ p {
 h1 {
   font-size: clamp(3rem, 8vw, 5.4rem);
   letter-spacing: 0;
-  line-height: 0.92;
+  line-height: 1.15;
   margin-bottom: 10px;
 }
 
@@ -267,3 +267,6 @@ ul {
     margin-top: 12px;
   }
 }
+
+:where(a, button):focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.contact-card button:hover { background: var(--accent-hover); }
